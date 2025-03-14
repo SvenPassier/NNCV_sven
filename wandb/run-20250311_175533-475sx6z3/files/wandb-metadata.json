@@ -1,0 +1,16 @@
+{
+  "os":  "Windows-10-10.0.19045-SP0",
+  "python":  "CPython 3.11.11",
+  "startedAt":  "2025-03-11T16:55:33.139815Z",
+  "program":  "c:\\Users\\20192420\\Documents\\Year 6\\Q3\\5LSM0 Neural Networks for Computer Vision\\NNCV\\tempCodeRunnerFile.python",
+  "codePath":  "tempCodeRunnerFile.python",
+  "git":  {
+    "remote":  "https://github.com/TUE-VCA/NNCV.git",
+    "commit":  "65dabec0dcb70c811f5111160128f7fcc288debb"
+  },
+  "email":  "s.w.l.passier@student.tue.nl",
+  "root":  "C:\\Users\\20192420\\Documents\\Year 6\\Q3\\5LSM0 Neural Networks for Computer Vision\\NNCV",
+  "host":  "20192420",
+  "executable":  "C:\\Users\\20192420\\AppData\\Local\\anaconda3\\envs\\5lSM0_env\\python.exe",
+  "codePathLocal":  "tempCodeRunnerFile.python"
+}
