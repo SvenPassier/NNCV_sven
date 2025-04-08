@@ -93,7 +93,8 @@ def main(args):
     # Define the transforms to apply to the data
     transform = Compose([
         ToImage(),
-        Resize((256, 256)),
+        # Resize((256, 256)),
+        Resize((512, 1024)), # better for Cityscapes
         ToDtype(torch.float32, scale=True),
         Normalize((0.5,), (0.5,)),
     ])
