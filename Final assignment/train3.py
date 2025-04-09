@@ -33,7 +33,7 @@ from torchvision.transforms.v2 import (
 
 
 
-from model1 import Model
+from model2 import Model
 
 
 
