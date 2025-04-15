@@ -1,6 +1,9 @@
 import torch
 import torch.nn as nn
 from torchvision.models.segmentation import deeplabv3_resnet101
+from torchvision.models.segmentation import DeepLabV3_ResNet101_Weights
+
+
 
 class Model(nn.Module):
     """
@@ -12,7 +15,11 @@ class Model(nn.Module):
         super(Model, self).__init__()
 
         # Load model with pretrained backbone (no pretrained weights on segmentation head)
-        self.model = deeplabv3_resnet101(pretrained=False, num_classes=n_classes)
+        # self.model = deeplabv3_resnet101(pretrained=True, num_classes=n_classes)
+        self.model = deeplabv3_resnet101(
+        weights=DeepLabV3_ResNet101_Weights.DEFAULT,  # loads pretrained ResNet101 backbone
+        num_classes=n_classes
+        )
 
     def forward(self, x):
         return self.model(x)["out"]
