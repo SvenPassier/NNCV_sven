@@ -11,7 +11,7 @@ class Model(nn.Module): # change to model
     """
     def __init__(self, in_channels=3, n_classes=19):#19
         
-        super(Model, self).__init__() # change to model
+        super(Model, self).__init__() 
 
         self.inc = (DoubleConv(in_channels, 64))
         self.down1 = (Down(64, 128))

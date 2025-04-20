@@ -31,7 +31,7 @@ from torchvision.transforms.v2 import (
 )
 
 from model1 import Model
-
+from lossDice import DiceLoss
 
 # Mapping class IDs to train IDs
 id_to_trainid = {cls.id: cls.train_id for cls in Cityscapes.classes}
@@ -93,9 +93,10 @@ def main(args):
     # Define the transforms to apply to the data
     transform = Compose([
         ToImage(),
-        Resize((256, 256)),
+        Resize((1024, 1024)),
         ToDtype(torch.float32, scale=True),
-        Normalize((0.5,), (0.5,)),
+        # Normalize((0.5,), (0.5,)),
+        Normalize(mean=(0.485, 0.456, 0.406),std=(0.229, 0.224, 0.225))
     ])
 
     # Load the dataset and make a split for training and validation
@@ -137,7 +138,8 @@ def main(args):
     ).to(device)
 
     # Define the loss function
-    criterion = nn.CrossEntropyLoss(ignore_index=255)  # Ignore the void class
+    # criterion = nn.CrossEntropyLoss(ignore_index=255)  # Ignore the void class
+    criterion = DiceLoss(num_classes=19, ignore_label=255, smooth=1e-6)
 
     # Define the optimizer
     optimizer = AdamW(model.parameters(), lr=args.lr)
