@@ -2,15 +2,14 @@ wandb login
 
 python3 train.py \
     --data-dir ./data/cityscapes \
-    --resume-checkpoint "checkpoints/pretrained/model.pth" \
-    --batch-size 2 \
-    --accumulation_steps 8 \
-    --epochs 10 \
+    --batch-size 8 \
+    --accumulation_steps 16 \
+    --epochs 45 \
     --lr 0.0001 \
-    --weight-decay 0.01 \
+    --weight-decay 0.0001 \
     --num-workers 10 \
     --seed 42 \
-    --experiment-id "model4train4" \
+    --experiment-id "run26" \
 
 
 ### OLD CODE
